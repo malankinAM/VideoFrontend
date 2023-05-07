@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body{
+    overflow-x: hidden;
+    color: #fff;
+    font-family: sans-serif;
+    background-color:rgb(14, 14, 14);
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+h5 a{
+    font-family: 'Courier New',sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 80px;
+}
+
+header ul li{
+    list-style: none;
+    display: inline-block;
+}
+
+header ul li:last-child a{
+    margin-right: 0;
+}
+
+header ul li a{
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 0 20px;
+}
+
+.contentGroop{
+text-align: center;
+margin-top: 150px;
+}
+
+.content h1{
+    font-size: 150px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.content h5{
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 26px;
+    letter-spacing: 10px;
+}
+.content h1 span,
+.content h5 span{
+    display: inline-block;
+}
+
+.content .playBtn{
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding: 17px 28px;
+    display: inline-block;
+    margin-top: 20px ;
+    border: 1px solid rgba(255,255,255,.3);
+}
+
+
+
+.ufoImg{
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    mix-blend-mode: screen;
+    z-index: -1;
+}
+
+.bgElement{
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background-color: #077fd4;
+    left: 0;
+    right: 0;
+    top: -40%;
+    margin: 0 auto;
+    filter: blur(500px);
+    opacity: .5;
+}
+
+.bgVideo{
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+}
+
+

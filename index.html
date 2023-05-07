@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+
+    <main>
+
+        <header>
+            <div class="bgElement"></div>
+
+            <div class="logo">
+                <a href="#"><img src="./Israel.jpg" alt="img" style="width: 60px;"></a>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="">I LOVE</a></li>
+                    <li><a href="">Frontend</a></li>
+                    <li><a href="">REACT</a></li>
+                    <li><a href="">Number One</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+            <div class="contentGroop">
+                <h5>Посвещается моему топ наставнику</h5>
+                <h1>Full Stack Developer</h1>
+                <a href="#" class="playBtn">Play Intro</a>
+                <img src="./Israel.jpg" alt="" class="ufoImg" style="width: 800px;">
+            </div>
+        </div>
+
+        <div class="bgVideo" style="text-align: center; margin-top: 300px;">
+            <video width="1000px" height="500px" controls>
+                <source src="./20230506_214706.mp4" type="video/mp4">
+                Israel is a country of freedom and choice
+            </video>
+        </div>
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+        integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("h1, h5").html(function (index, html) {
+                return html.replace(/\S/g, '<span>$&</span>');
+            });
+
+            $(".bgVideo").hide();
+            $(".playBtn").on("click", function () {
+                $(".bgVideo").fadeIn();
+                $(".bgVideo video").get(0), play();
+            });
+
+            $(".playBtn video").on("ended", function () {
+                $(".bgVideo").fadeOut();
+
+            });
+
+            var tl = gsap.timeline();
+
+            tl.from("h1 span", {
+                opacity: 0,
+                duration: 3,
+                stagger: {
+                    from: "random",
+                    amount: 2
+                }
+            })
+                .from("h5 span", {
+                    opacity: 0,
+                    duration: 3,
+                    stagger: {
+                        from: "random",
+                        amount: 2
+                    }
+                }, "-=1")
+
+                .from(".playBtn", {
+                    opacity: 0,
+                    duration: 3,
+                    scale: [.8, 1]
+                }, "-=1")
+
+                .from(".ufoImg", {
+                    opacity: 0,
+                    duration: 10,
+                    scale: [0, 1],
+                    y: -800,
+                }, "-=1")
+
+                .from("header .logo", {
+                    opacity: 0,
+                    duration: 2,
+                    scale: [.8, 1],
+
+                }, "-=1")
+
+                .from("header ul li", {
+                    opacity: 0,
+                    duration: 2,
+                    scale: [.8, 1],
+                    stagger: {
+                        from: "start",
+                        amout: 2
+                    }
+                }, "-=1")
+        });
+
+    </script>
+</body>
+
+</html>
